@@ -56,9 +56,14 @@ namespace ExampleControlsSystemReceiver.ConsoleUi
                 {
                     var parts = msg.Split(',');
                     if (parts.Length == 2 && int.TryParse(parts[1], out var scene))
+                    {
                         ShowScene(scene);
+                    }
+
                     else
+                    {
                         Log.Warning("Invalid ShowScene command format: {msg}", msg);
+                    }
                 }
             }
         }
