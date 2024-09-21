@@ -26,6 +26,9 @@ namespace ExampleControlsSystemReceiver.ConsoleUi
             serviceCollection.AddLogging(configure => configure.AddSerilog());
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
+            var version = VersionService.GetAppVersion();
+            Log.Information("ExampleControlsSystemReceiver.ConsoleUi version {version}", version);
+
             var logger = serviceProvider.GetService<ILogger<AsyncUdpLink>>();
             _asyncUdpLink = new AsyncUdpLink(logger, "127.0.0.1", 12345, 500);
 
