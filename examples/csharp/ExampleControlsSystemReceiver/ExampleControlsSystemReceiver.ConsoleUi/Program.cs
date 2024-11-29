@@ -30,7 +30,7 @@ namespace ExampleControlsSystemReceiver.ConsoleUi
             Log.Information("ExampleControlsSystemReceiver.ConsoleUi version {version}", version);
 
             var logger = serviceProvider.GetService<ILogger<AsyncUdpLink>>();
-            _asyncUdpLink = new AsyncUdpLink(logger, "127.0.0.1", 12345, 500);
+            _asyncUdpLink = new AsyncUdpLink(logger, "127.0.0.1", 12345, 8000);
 
             // Subscribe to the DataReceived event
             _asyncUdpLink.DataReceived += OnDataReceived;
